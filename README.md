@@ -277,15 +277,8 @@ This path keeps the interface identical for the frontend, while boosting answer 
 - Frontend:
   - `Ctrl + C` in the frontend terminal.
 
----
 
-## 11) License
-
-Insert your preferred license (e.g., MIT) here.
-
----
-
-## 12) Credits
+## 11) Credits
 
 - Backend: FastAPI + Uvicorn
 - Frontend: Vanilla HTML/CSS/JS
