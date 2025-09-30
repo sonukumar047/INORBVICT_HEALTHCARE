@@ -73,7 +73,7 @@ frontend/
   static/
     css/style.css                   # No inline CSS, responsive, focus-visible, ARIA friendly
     js/app.js                       # Mode handling, upload, chat, progress UI
-```
+
 
 ---
 
@@ -224,10 +224,10 @@ This project ships with a simple keyword‑based search by default. For higher r
    pip install langchain-community langchain-huggingface sentence-transformers faiss-cpu
    ```
 
-2. `backend/app/services/vector_store.py` provides a minimal wrapper:
-   - `add_files(paths)` splits and indexes documents with HuggingFace embeddings (defaults to `all-MiniLM-L6-v2`).
-   - `similarity_search(query, k)` returns the best‑matching chunks with scores.
-   - `info()` exposes index statistics.
+2. backend/app/services/vector_store.py provides a minimal wrapper:
+   - add_files(paths) splits and indexes documents with HuggingFace embeddings (defaults to `all-MiniLM-L6-v2`).
+   - similarity_search(query, k) returns the best‑matching chunks with scores.
+   - info() exposes index statistics.
 
 3. Integrate into RAG service:
    - On upload: call `vector_store.add_files(paths)`.
