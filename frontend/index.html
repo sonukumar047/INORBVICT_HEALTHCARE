@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Assistant</title>
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <div class="chat-title">
+        <h2>AI Assistant</h2>
+        <div class="status-indicator">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="statusText">Ready</span>
+        </div>
+      </div>
+      <div class="mode-selector" role="group" aria-label="Mode selector">
+        <button id="flowModeBtn" class="mode-btn active" type="button" aria-pressed="true" title="Switch to Flow mode">Flow Mode</button>
+        <button id="ragModeBtn" class="mode-btn" type="button" aria-pressed="false" title="Switch to RAG mode">RAG Mode</button>
+      </div>
+    </header>
+
+    <section id="uploadArea" class="upload-area" aria-hidden="true">
+      <div class="upload-content">
+        <label for="fileInput" class="upload-label">
+          <span class="sr-only">Choose files to upload</span>
+          <input id="fileInput" class="file-input" name="files" type="file" multiple accept=".pdf,.txt" title="Choose PDF or TXT files to upload">
+          <button id="uploadBtn" class="upload-btn" type="button" aria-label="Select files to upload" title="Select files to upload">📁 Upload Documents</button>
+        </label>
+        <p id="uploadHelp" class="upload-info">Upload PDF or TXT files (Max 10MB per file). After upload, ask questions about their content.</p>
+      </div>
+    </section>
+
+    <main id="chatMessages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions">
+      <div class="welcome-message">
+        <div class="bot-avatar" aria-hidden="true">🤖</div>
+        <div class="message bot-message">
+          Welcome! Choose a mode:
+          <br><strong>Flow Mode:</strong> Guided conversation
+          <br><strong>RAG Mode:</strong> Document-based Q&A
+        </div>
+      </div>
+    </main>
+
+    <footer class="chat-input-container">
+      <form id="chatForm" class="chat-input" aria-label="Send message">
+        <label for="messageInput" class="sr-only">Type your message</label>
+        <input id="messageInput" name="message" type="text" placeholder="Type your message..." title="Type your message" disabled maxlength="1000" autocomplete="off" aria-describedby="messageHelp">
+        <button id="sendBtn" class="send-btn" type="submit" disabled aria-label="Send message" title="Send message">Send</button>
+        <span id="messageHelp" class="sr-only">Press Enter or click Send</span>
+      </form>
+    </footer>
+
+    <div id="summaryModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-content">
+        <button class="close" type="button" aria-label="Close" title="Close">&times;</button>
+        <h2 id="modalTitle">Summary</h2>
+        <div id="summaryContent"></div>
+        <button id="startNewFlow" class="btn" type="button" title="Start new flow">Start New Flow</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="static/js/app.js"></script>
+</body>
+</html>
