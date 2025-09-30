@@ -1,6 +1,6 @@
 # INORBVICT_HEALTHCARE
 
-```markdown
+
 # AI Assistant (Flow + RAG)
 
 A production‑ready, accessibility‑first chatbot that supports two powerful modes:
@@ -15,7 +15,7 @@ The project is intentionally lightweight (no frontend frameworks), easy to run l
 
 This section helps bootstrap an empty repo into the exact structure used by the app. If the files already exist, skip the `touch` steps.
 
-```
+
 # Backend folders
 mkdir -p backend/app/models
 mkdir -p backend/app/routers
@@ -110,7 +110,6 @@ frontend/
 
 ### 4.1 Backend (API)
 
-```
 cd backend
 
 # Create & activate a virtual environment
@@ -127,7 +126,7 @@ pip install -r requirements.txt
 
 # Start the server
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
+
 
 Sanity check:
 - Visit http://localhost:8000/health
@@ -142,7 +141,6 @@ Key backend endpoints:
 
 ### 4.2 Frontend (Static)
 
-```
 cd frontend
 
 # Serve static files on port 3000
@@ -150,7 +148,7 @@ python -m http.server 3000
 
 # If 3000 is taken:
 # python -m http.server 5500
-```
+
 
 Open:
 - http://localhost:3000 (or the chosen port)
@@ -292,4 +290,3 @@ Insert your preferred license (e.g., MIT) here.
 - Backend: FastAPI + Uvicorn
 - Frontend: Vanilla HTML/CSS/JS
 - Optional search: FAISS + sentence‑transformers via langchain‑community/langchain‑huggingface
-```
